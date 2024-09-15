@@ -1,6 +1,6 @@
 {
   "engines": {
-    "node": "22.7.0"
+    "node": "22.x"
   },
   "name": "plantopic",
   "version": "1.0.0",
