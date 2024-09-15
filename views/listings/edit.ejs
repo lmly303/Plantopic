@@ -1,0 +1,44 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <div class="heading">
+        <h1>Edit Plant Details</h1>
+    </div>
+    <br>
+
+    <form method="post" action="/listings/<%=plant._id %>?_method=PUT" class="plant-form" enctype="multipart/form-data">
+        <label for="plant-name">Plant Name : </label>
+        <input id="plant-name" name="listing[name]" type="text" value="<%= plant.name %>" required>
+        <br>
+        <br>
+        <label for="plant-description">Description : </label>
+        <textarea id="plant-description" name="listing[description]" cols="30" rows="10" required><%= plant.description %></textarea>
+        <br>
+        <br>
+        <label for="plant-sunlight">Sunlight : </label>
+        <input id="plant-sunlight" name="listing[sunlight]" type="text" value="<%= plant.sunlight %>" required>
+        <br>
+        <br>
+        <label for="plant-waterNeeds">Water Need : </label>
+        <input id="plant-waterNeeds" name="listing[waterNeeds]" type="text" value="<%= plant.waterNeeds %>" required>
+        <br>
+        <br>
+        <label for="plant-soilType">Soil Type : </label>
+        <input id="plant-soilType" name="listing[soilType]" type="text" value="<%= plant.waterNeeds %>" required>
+        <br>
+        <br>
+        <label for="plant-bloomTime">Bloom Time : </label>
+        <input id="plant-bloomTime" name="listing[bloomTime]" type="text" value="<%= plant.bloomTime %>" required>
+        <br>
+        <br>
+        <label for="plant-imageUrl">Image : </label>
+        <input id="plant-imageUrl" name="listing[image]" type="file" value="<%= plant.imageUrl %>">
+        <br>
+        <br>
+        <label for="plant-price">Price in rupees : </label>
+        <input id="plant-price" name="listing[price]" type="number" required value="<%= plant.price.toLocaleString("en-IN") %>">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>  
+    <br><br>
+</body>

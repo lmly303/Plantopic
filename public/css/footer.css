@@ -1,0 +1,56 @@
+footer {
+    background-color: #E4E4D0; 
+    color: #094c00; 
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer * {
+    background-color: inherit;
+}
+
+footer div{
+    background-color: #E4E4D0;
+}
+
+.f-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.f-info-socials {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.f-info-socials i {
+    margin: 0 10px;
+    background-color:#E4E4D0;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: #094c00;
+    transition: color 0.3s ease;
+}
+
+.f-info-links {
+    margin-top: 10px;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #094c00; /* Darker shade for links */
+    margin: 0 10px;
+    font-weight: bold;
+    background-color: #E4E4D0;
+}
+
+.f-info-links a:hover {
+    color: #092b09; /* Light Sage */
+}

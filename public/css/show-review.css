@@ -1,0 +1,43 @@
+.reviews-container h2{
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    text-align: left;
+}
+
+.reviews-container {
+    margin: 1rem;
+}
+
+.review {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.review p {
+    margin: 0;
+    color: #555;
+    background-color: #fff;
+}
+
+.delete-btn-comments {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #322e2e;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn-comments:hover {
+    background-color: #000000;
+}
+
+.review-form-delet{
+    background-color: #fff;
+}

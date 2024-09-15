@@ -1,0 +1,77 @@
+<% layout('/layouts/boilerplate') -%>
+<body >
+    <div >
+        <div class="heading">
+        <h1><i class="fa-solid fa-seedling"></i> Plant Deatils</h1>
+    </div>
+    <div class="plant-details">
+        <img src="<%= plant.image.url %>" alt="plant image" class="plant-photo">
+        <h3><b><%= plant.name %></b></h3>
+        <ul class="plant-info-show">
+            <li><strong>Description:</strong> <%= plant.description %></li>
+            <li><strong>Sunlight:</strong><%= plant.sunlight %></li>
+            <li><strong>Water Needs:</strong> <%= plant.waterNeeds %></li>
+            <li><strong>Soil Type:</strong> <%= plant.soilType %></li>
+            <li><strong>Bloom Time:</strong> <%= plant.bloomTime %></li>
+            <li><strong>Price:</strong> Rs <%= plant.price.toLocaleString("en-IN") %></li>
+        </ul>
+
+        <div class="actions">
+            <a href="/listings/<%= plant._id%>/edit" class="edit-btn">Edit Details</a>
+            <form method="POST" action="/listings/<%= plant._id%>?_method=DELETE" class="delete-form">
+                <button class="delete-btn">Delete</button>
+            </form>
+            <form method="POST" action="/listings/<%= plant._id%>/cart" class="insert-form">
+                <button class="cart-btn">Add to cart</button>
+            </form>
+        </div>
+        
+    </div>  
+    <hr><hr> 
+    <br><br> 
+    <% if(currUser){ %>
+        <div class="review-div">
+            <h5>Add Your Review</h5>
+            <form method="post" action="/listings/<%= plant._id%>/reviews" class="review-form">
+                <label for="comment">Comment:</label>
+                <textarea name="review[comment]" id="comment" cols="30" rows="5" placeholder="Write your review here..." required></textarea>
+                <br><br>
+                
+                <label for="rating">Rating:</label>
+                <select name="review[rating]" id="rating" required>
+                    <option value="">Select a rating</option>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+                <br><br>
+            
+                <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+        </div>
+        <br>
+    <hr><hr>
+   <%  } %>
+    
+    <div class="reviews-container">
+        <h2>Reviews</h2>
+        <% for(review of plant.reviews) { %>
+            <div class="review">
+                <h4><%= review.author.username.charAt(0).toUpperCase() + review.author.username.slice(1) %></h4>
+                <p class="starability-result" data-rating="<%= review.rating %>"></p>
+                <br>
+                <p><%= review.comment %></p>
+                <br>
+                <form method="POST" action="/listings/<%= plant._id %>/reviews/<%= review._id %>?_method=DELETE" class="review-form-delet">
+                    <button class="delete-btn-comments">Delete</button>
+                </form>
+            </div>
+            
+        <% } %>
+    </div>
+    <br><br>
+    </div>    
+</body>
+

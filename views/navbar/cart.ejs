@@ -1,0 +1,48 @@
+<% layout('/layouts/boilerplate') -%>
+
+<body>
+    <div class="cart-container">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+        </div>
+
+        <div class="cart-items">
+            <% if (cart.orderItem.length === 0) { %>
+                <img src="/images/emptycart.png" alt="empty cart" class="emptycart-img">
+            <% } else { %>
+                <% cart.orderItem.forEach(item => { %>
+                    <div class="cart-item">
+                        <img src="<%= item.listing.image.url %>" alt="<%= item.listing.name %>">
+                        <div class="cart-item-details">
+                            <p class="cart-item-name"><%= item.listing.name %></p>
+                            <p class="cart-item-description"><%= item.listing.description %></p>
+                        </div>
+                        <div class="cart-quantity">
+                            <!-- Decrease button -->
+                            <form method="Post" action="/cart/update?_method=patch">
+                                <input type="hidden" name="id" value="<%= item.listing._id %>">
+                                <input type="hidden" name="change" value="-1">
+                                <button type="submit" class="quantity-button">-</button>
+                            </form>
+                            <input type="text" value="<%= item.quantity %>" readonly>
+                            <!-- Increase button -->
+                            <form method="Post" action="/cart/update?_method=patch">
+                                <input type="hidden" name="id" value="<%= item.listing._id %>">
+                                <input type="hidden" name="change" value="1">
+                                <button type="submit" class="quantity-button">+</button>
+                            </form>
+                        </div>
+                        <br><br>
+                        <div class="cart-price">
+                            ₹<%= item.listing.price * item.quantity %>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } %>
+        </div>
+
+        <div class="cart-total">
+            <h3>Total: ₹<span class="cart-total-value"><%= totalPrice %></span></h3>
+        </div>
+    </div>
+</body>

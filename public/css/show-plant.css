@@ -1,0 +1,177 @@
+.plant-details {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    text-align: left; /* Center align content */
+}
+
+.plant-photo {
+    max-width: 35rem; /* Make the image responsive */
+    height: 20rem; /* Maintain aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.plant-details h3 {
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.plant-info-show {
+    font-family: "PT Sans Narrow", sans-serif;
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Center align */
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    text-align: left;
+    max-width: 90%; /* Adjust width for small screens */
+}
+
+.plant-info-show li {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.actions {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row; /* Set to row to align buttons horizontally */
+    gap: 10px; /* Adds space between buttons */
+    align-items: center; /* Center-aligns the buttons vertically */
+    justify-content: flex-start; /* Align buttons to the left */
+    
+}
+
+.edit-btn, .delete-btn, .cart-btn {
+    text-decoration: none;
+    width: fit-content;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn {
+    border:none;
+    background-color: #28a745;
+}
+
+.edit-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn {
+    border: none;
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+.cart-btn {
+    border:none;
+    background-color: #484848;
+}
+
+.cart-btn:hover {
+    background-color: #2d2d2d;
+}
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 1200px) {
+    .plant-details h3 {
+        font-size: 20px;
+    }
+
+    .plant-info-show {
+        font-size: 14px;
+    }
+
+    .plant-photo {
+        max-width: 80%; /* Adjust size for larger tablets and laptops */
+        height: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .plant-details {
+        padding: 15px;
+    }
+
+    .plant-info-show {
+        font-size: 14px;
+        margin-left: 0; /* Reset margin for small screens */
+    }
+
+    .plant-photo {
+        max-width: 70%; /* Adjust size for tablets */
+    }
+
+    .actions {
+        margin-top: 10px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .plant-details {
+        padding: 10px;
+    }
+
+    .plant-details h3 {
+        font-size: 18px;
+    }
+
+    .plant-info-show {
+        font-size: 12px;
+        margin-left: 0;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: left;
+        margin-top: 10px;
+    }
+
+    .edit-btn, .delete-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .plant-photo {
+        max-width: 60%; /* Adjust size for smaller tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .plant-details {
+        padding: 8px;
+    }
+
+    .plant-details h3 {
+        font-size: 16px;
+    }
+
+    .plant-info-show {
+        font-size: 12px;
+    }
+
+    .actions {
+        margin-top: 10px;
+        gap: 5px;
+    }
+
+    .edit-btn, .delete-btn , .cart-btn{
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .plant-photo {
+        max-width: 50%; /* Adjust size for small screens like mobile */
+    }
+}

@@ -1,0 +1,79 @@
+.plant-care-head-2 h2{
+    display: flex;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #022d0c;
+    font-size: 2rem;
+    justify-content: center;
+}
+
+.intro-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.intro-section h1 {
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    color: #010000;
+    margin-bottom: 10px;
+}
+
+.intro-section p {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #000000;
+    text-align: justify;
+    padding: 10px;
+    margin: 5px;
+}
+
+.plant-care-section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.plant-care-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.plant-care-item {
+    margin: 10px;
+    max-width: 400px;
+    text-align: center;
+    background-color: #d7eb92;
+    padding: 5px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.plant-care-item:hover {
+    transform: scale(0.95); /* Slightly zooms out the entire card on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.plant-img {
+    width: 100%;
+    max-height: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px); /* Image floats up */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

@@ -1,0 +1,25 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <div class="heading" >
+        <h1> <i class="fa-solid fa-seedling"></i> All Plants </h1>
+        <br><br>
+    </div>
+    <!-- <form method="GET"  action="/listings/new">
+        <button>Add New Plant</button>
+    </form> -->
+    <br><br>
+    <div class="plant-container">
+        <% for(let plant of allListings){ %>
+            <a class="plant-card-text"   href="/listings/<%= plant._id%>">
+                <div class="plant-card">
+                    <img src="<%= plant.image.url %>" alt="Bamboo Palm" class="plant-image">
+                    <div class="plant-info">
+                        <p class="plant-name"><b><%= plant.name %></b></p>
+                        <p class="plant-price">₹ <%= plant.price %></p>
+                    </div>
+                </div>
+                <br><br>
+            </a>
+        <% } %>
+    </div>
+</body>

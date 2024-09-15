@@ -1,0 +1,45 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <div class="heading">
+        <h1>Add New Plant</h1>
+        <p><b>Fill the mandotry (*) columns .</b></p>
+    </div>
+    <br>
+
+    <form method="post" action="/listings" class="plant-form" enctype="multipart/form-data">
+        <label for="name">Plant Name *: </label>
+        <input name="listing[name]" type="text" placeholder="Enter name of plant" required>
+        <br>
+        <br>
+        <label for="description">Description * : </label>
+        <textarea name="listing[description]" id="description" cols="30" rows="10" placeholder="Enter description of plant" required></textarea>
+        <br>
+        <br>
+        <label for="sunlight">Sunlight * : </label>
+        <input name="listing[sunlight]" type="text" placeholder="(Full Sun, Partial Sun, Shade)" required>
+        <br>
+        <br>
+        <label for="waterNeeds">Water Need * : </label>
+        <input name="listing[waterNeeds]" type="text" placeholder="(Low, Medium, High)" required>
+        <br>
+        <br>
+        <label for="soilType">Soil Type * : </label>
+        <input name="listing[soilType]" type="text" required>
+        <br>
+        <br>
+        <label for="bloomTime">Bloom Time * : </label>
+        <input name="listing[bloomTime]" type="text" required>
+        <br>
+        <br>
+        <label for="imageUrl">Upload Image * : </label>
+        <input name="listing[image]" type="file"  required>
+        <br>
+        <br>
+        <label for="price">Price in rupees * : </label>
+        <input name="listing[price]" type="number" placeholder="100" required>
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <br><br><br>    
+</body>

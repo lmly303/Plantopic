@@ -1,0 +1,202 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #E4E4D0; /* Off-White Background for Navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar * {
+    background-color: inherit; /* Inherit the background color from navbar */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 180px; 
+    height: 80px;
+    object-fit: cover; 
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #94A684; /* Olive Green */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #092b09; /* Light Sage */
+}
+
+.search-cart {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-icon {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #94A684; /* Olive Green */
+}
+
+.cart-icon:hover {
+    color: #092b09; /* Light Sage */
+}
+
+.toggle-btn {
+    display: none; /* Hide by default */
+    cursor: pointer;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #94A684; /* Olive Green */
+}
+
+.toggle-btn:hover {
+    color: #092b09; /* Light Sage */
+}
+
+.dropdown-menu {
+    position: relative;
+    display: inline-block;
+}
+
+  .dropdown-btn {
+    background: none;
+    border: 3px solid #1f3905;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+    padding: 5px;
+    text-align: center;
+    margin-right: 20px;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #13430f;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: #000000}
+
+  .dropdown-menu:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-menu:hover .dropdown-btn {
+    background-color: #dddddd;
+  }
+
+@media (max-width: 1000px) {
+    /* Styles for tablets */
+    .navbar {
+        align-items: flex-end;
+        padding: 10px;
+    }
+    .dropdown-btn {
+        margin-right: 0px;
+      }
+    .logo {
+        width: 100%;
+        align-items: center; /* Center the logo */
+        justify-content: space-between; /* Keeps the logo on the left and menu-cart on the right */
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default on tablets */
+        flex-direction: column;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        gap: 10px;
+        align-items: flex-end; /* Align links to the right */
+    }
+
+    .nav-links.show {
+        display: flex; 
+        position: absolute;
+        top: 100%; 
+        right: 0;
+        background-color: #E4E4D0; 
+        width: 100%;
+        padding: 10px 0; 
+        border: 1px solid #ddd; 
+        border-radius: 4px; 
+        z-index: 1001; 
+    }
+
+    .nav-links li {
+        width: auto;
+    }
+
+    .nav-links li a {
+        padding: 10px 15px; /* Add horizontal padding for spacing */
+        text-align: right;
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+    }
+
+    .menu-cart-container {
+        display: flex;
+        align-items: end;
+        gap: 10px;
+        width: 100%;
+        gap: 20px;
+        justify-content: end; /* Aligns toggle button to the left and cart icon to the right */
+    }
+
+    .toggle-btn {
+        display: block; /* Show the toggle button */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Additional styles for phones */
+    .nav-links {
+        display: none; /* Initially hidden for phones */
+    }
+
+    .menu-cart-container {
+        width: 100%;
+        justify-content: end; /* Aligns the toggle button and cart icon */
+    }
+}
+/* navbaar end */
+
+
+/* Adjust margin to account for fixed navbar */
+.head2 {
+    margin-top: 7rem;
+}
