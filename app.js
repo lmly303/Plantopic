@@ -116,6 +116,10 @@ async function main(){
     await mongoose.connect(dbUrl);
 }
 
+app.listen(8080,() => {
+    console.log("app is listening");
+});
+
 app.all("*", (req,res,next) =>{
     next(new ExpressError(404,"Page Not Found"));
 });
@@ -125,8 +129,6 @@ app.use((err,req,res,next) => {
     res.status(statusCode).send(message);
 });
 
-app.listen(8080,() => {
-    console.log("app is listening");
-});
+
 
 
