@@ -114,6 +114,11 @@ app.use("/listings/:id/reviews",reviewsRouter);
 
 app.use("/", userRouter);
 
+app.get("/", (req, res) => {
+    res.redirect("/home");
+});
+
+
 
 main()
 .then(() =>{
