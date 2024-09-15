@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node": "22.7.0"
-  },
   "name": "plantopic",
   "version": "1.0.0",
   "main": "index.js",
