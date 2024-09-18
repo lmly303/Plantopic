@@ -77,17 +77,6 @@ app.use((req,res,next)=>{
     next();
 });
 
-app.use((req, res, next) => {
-    console.log(`Request URL: ${req.url}, Method: ${req.method}`);
-    next();
-});
-
-app.use((err, req, res, next) => {
-    console.log(err);
-    res.status(500).render("error.ejs", { error: err.message });
-});
-
-
 
 app.get("/home" , (req,res)=>{
     res.render("navbar/home.ejs");
