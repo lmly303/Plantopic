@@ -17,10 +17,14 @@
         </ul>
 
         <div class="actions">
-            <a href="/listings/<%= plant._id%>/edit" class="edit-btn">Edit Details</a>
-            <form method="POST" action="/listings/<%= plant._id%>?_method=DELETE" class="delete-form">
-                <button class="delete-btn">Delete</button>
-            </form>
+            <% if(currUser && currUser._id.equals(plant.owner._id)) { %>
+                <div class="actions">
+                    <a href="/listings/<%= plant._id %>/edit" class="edit-btn">Edit Details</a>
+                    <form method="POST" action="/listings/<%= plant._id %>?_method=DELETE" class="delete-form">
+                        <button class="delete-btn">Delete</button>
+                    </form>
+                </div>
+                <% } %>
             <form method="POST" action="/listings/<%= plant._id%>/cart" class="insert-form">
                 <button class="cart-btn">Add to cart</button>
             </form>
