@@ -68,9 +68,11 @@
                 <br>
                 <p><%= review.comment %></p>
                 <br>
-                <form method="POST" action="/listings/<%= plant._id %>/reviews/<%= review._id %>?_method=DELETE" class="review-form-delet">
-                    <button class="delete-btn-comments">Delete</button>
-                </form>
+                <% if(currUser && currUser._id.equals(review.author._id)) { %>
+                    <form method="POST" action="/listings/<%= plant._id %>/reviews/<%= review._id %>?_method=DELETE" class="review-form-delet">
+                        <button class="delete-btn-comments">Delete</button>
+                    </form>
+                <% } %>
             </div>
             
         <% } %>
