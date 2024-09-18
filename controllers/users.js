@@ -30,9 +30,15 @@ module.exports.renderSinginForm = (req,res) =>{
 }
 
 module.exports.postSinginForm = async (req,res) =>{
-    req.flash("success", "Welcome back to PLANTOPIC");
-    let redirectUrl = res.locals.redirectUrl || "/listings";
-    res.redirect(redirectUrl);
+    try{
+        req.flash("success", "Welcome back to PLANTOPIC");
+        let redirectUrl = res.locals.redirectUrl || "/listings";
+        res.redirect(redirectUrl);
+    }
+    catch(err){
+        req.flash("error", err.message);
+        res.redirect(`/login`);
+    }
 }
 
 
